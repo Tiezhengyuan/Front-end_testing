@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //method 1
+            // Object should upper case
+            var t = new Object();
+            t.name="a";
+            t.age=45;
+            t.leftYear=function(RetiredYear){
+                return RetiredYear-t.age
+            }
+            console.log(t);
+            console.log(t.age);
+            console.log(t.leftYear(70));
+            
+            // method 2: like create a hash table in Perl
+            var m = {name: 'a', age: 34};
+            console.log(m);
+            console.log(m['name']);
+            // add new attributes
+            m.gender="M";
+            m.note="";
+            console.log(m);
+            //delete an attribute
+            if ('note' in m){
+                delete m.note;
+                console.log(m);
+            }
+            //enumerate attributes name
+            for ( var i in m){
+                console.log(i+':'+m[i]);
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

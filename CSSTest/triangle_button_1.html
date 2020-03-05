@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body, div{
+                padding:0;
+                margin;0;
+            }
+            .main{
+                height: 400px;
+                width: 400px;
+                margin: 50px auto;
+                border: 1px solid black;
+            }
+            .btn1{
+                position: relative;
+                left: 50px;
+                top: 50px;
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                color: #eee;
+                text-align: center;
+                background-color: blue;
+                border: 0px solid black;
+                border-radius: 5px;
+            }
+            <!-- must include content or not display  -->
+            .main::before{
+                content:"";
+            }
+            .btn1::before{
+                content: "";
+                display: block;
+                height: 0px;
+                width: 0px;
+               
+                position: absolute;
+                left: 10%;
+                top: -80px;
+                border: 40px solid blue;
+                border-color: transparent transparent blue transparent;
+
+
+            }
+        </style>
+    </head>
+    <body>
+        <!-- triangle button -->
+        <div class="main" id="">
+            <div class="btn1" id="x">
+                btn1
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

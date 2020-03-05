@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            html body div ul li {
+                padding: 0;
+                margin: 0;
+            }
+            .menu-box{
+                border: 1px solid purple;
+                width: 200px;
+            }
+            .ac-item{
+                list-style: none;
+            }
+            .ac .ac-item-hd{
+                border: 1px solid purple;
+                background-color: grey;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 30px;
+                text-align: center;
+            }
+            .ac .ac-item-hd:hover{
+                background-color: tan;
+                cursor: pointer;
+            }
+            .ac .ac-item-bd{
+                background-color: lightgrey;
+                font-size: 20px;
+                padding: 3px;
+                display: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            .ac .on .ac-item-bd{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="menu-box">
+            <ul class="ac">
+                <li class="ac-item">
+                    <div class="ac-item-hd">sports</div>
+                    <div class="ac-item-bd"><a href="#">basketball</a></div>
+                    <div class="ac-item-bd"><a href="#">football</a></div>
+                </li>
+                <li class="ac-item">
+                    <div class="ac-item-hd">arts</div>
+                    <div class="ac-item-bd"><a href="#">violin</a></div>
+                    <div class="ac-item-bd"><a href="#">piano</a></div>
+                </li>
+                <li class="ac-item">
+                    <div class="ac-item-hd">politics</div>
+                    <div class="ac-item-bd"><a href="#">China</a></div>
+                    <div class="ac-item-bd"><a href="#">USA</a></div>
+                </li>
+            </ul>
+
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".ac-item-hd").on('click', function(){
+                    // get current object: $(this)
+                    //move nodes using parent() and siblings();
+                    //change class name: addClass, removeClass();
+                    $(this).parent().addClass("on");
+                    $(this).parent().siblings('li').removeClass("on");
+                });
+            });
+            
+        </script>    
+    </body>
+</html>

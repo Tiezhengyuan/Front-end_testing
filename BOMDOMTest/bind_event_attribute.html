@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="" id="tm">
+            div block
+        </div>
+        <<p class="" id="">
+             this is paragraph
+        </p>
+        <input type="button" value="select">
+
+        </input>
+        <input type="text" id="name">
+            enter your name
+        </input>
+
+        <script type="text/javascript">
+            console.log('load JS');
+            //event of the div mark
+            // the two methos are equal.
+            //var tm = document.getElementById("tm");
+            var tm = document.querySelector("#tm");
+            tm.onclick = function(){
+                alert(this.innerHTML);
+            }
+            
+            // event of the input mark
+            var n1 = document.querySelector("input");
+            console.log(n1);
+            n1.onclick = function(){
+                var t1 = document.querySelector("#name");
+                var text = t1.innerHTML;
+                console.log(t1);
+                console.log(text);
+                alert(this.innerHTML);
+            }
+            
+            //
+
+        </script>    
+    </body>
+</html>
+
+
+
+
+

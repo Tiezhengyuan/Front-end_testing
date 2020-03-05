@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body, div{
+                padding: 0;
+                margin: 0;
+            }
+            .main{
+                height: 400px;
+                width: 400px;
+                margin: 50px auto;
+                border: 1px solid black;
+            }
+            .left{
+                height: 40px;
+                line-height: 40px;
+                width: 100px;
+                text-align: center;
+                margin: 100px auto;
+                border: 1px solid black;
+                color: white;
+                background-color: blue;
+                position: relative;
+            }
+
+            .left::before{
+                content:"";
+                position: absolute;
+                left: -40px;
+                top: 0%;
+                height: 0px;
+                width: 0px;
+                border: 20px solid blue;
+                border-color: transparent blue transparent transparent;
+            }
+            .a-link{
+                text-decoration: none;
+                font-weight: bold;
+                font-style: italic;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main" id="">
+            <div class="left" id="">
+                <a href="#" class="a-link">Go back</a>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

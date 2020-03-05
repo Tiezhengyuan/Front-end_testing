@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js">
+        </script>   
+        <style>
+            #box{
+                font-size: 20px;
+            }
+            .txt{
+                width: 50px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <div id="box">
+                <span>Phone number: </span>
+                (<input class="txt" id="text1" type="number">)</input>
+                <input class="txt" id="text2" type="number">-</input>
+                <input class="txt" id="text3" type="number"></input>
+            </div>
+            <input id="btn" type="button" value="OK"></input>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                document.myReady( function(){
+                    var box = document.getElementById("box");
+                    var inList = box.getElementsByTagName("input");
+                    var p = "";
+                    for (var i = 0; i < inList.length; i++) {
+                        /*
+                        (function(j){
+                            inList[j].onkeyup = function(e){
+                                if(this.value.length >= 3){
+                                    console.log(j);
+                                    if(j<2){
+                                        //j++ is not working
+                                        inList[j+1].focus();
+                                    }else{
+                                        var b = document.getElementById("btn");
+                                        b.focus();
+                                    }
+                                }
+                            }
+                        })(i);*/
+                        //
+                        demo(i);
+                    }
+                    //
+                    function demo(j){
+                        inList[j].onkeyup = function(e){
+                            if(j<2){
+                                if(this.value.length >= 3){
+                                    //j++ is not working
+                                    inList[j+1].focus();
+                                    p += this.value;
+                                }
+                            }else{//j==2
+                                if(this.value.length>=4){
+                                    p += this.value;
+                                    var b = document.getElementById("btn");
+                                    b.focus();
+                                    b.style.fontWeight = "bold";
+                                    console.log(p);
+                                }
+                            }
+                        }
+                    }
+                });
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

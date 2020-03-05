@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="btn1" type="button" value="onclick"></input>
+        <input id="btn2" type="button" value="addEvent"></input>
+        <script type="text/javascript">
+            console.log('load JS');
+            var btn1 = document.querySelector("#btn1");
+            var btn2 = document.querySelector("#btn2");
+            // all browser could accept
+            btn1.onclick = demo;
+            // IE doesn't use addEventListerner but attchEvent
+            if(btn2.addEventListener){
+                btn2.addEventListener('click', demo, false);
+            }else{
+                btn2.attachEvent('onclick', demo);
+            }
+            
+            function demo(){
+                alert(123);
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

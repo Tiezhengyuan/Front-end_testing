@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 19, 2020, 11:37:40 AM
+    Author     : zhang xia
+*/
+
+/*apply to marks*/
+*{
+    color: silver;
+}
+
+/*select by mark*/
+p{
+    color: red;
+}
+
+li{
+    background-color: gold;
+}
+
+span{
+    font-size: 50px;
+}
+
+/*select by id involved in marks*/
+#li1{
+    color: red;
+    background-color: silver;
+}
+#li2{
+    background-color: green;
+}
+
+/*select by class in marks*/
+.p-in{
+    color: green;
+}

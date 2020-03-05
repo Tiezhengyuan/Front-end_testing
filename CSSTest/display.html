@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .par{
+                display:none
+            }
+            .block-span{
+                display: block;
+            }
+            #imgLogo{
+                width: 50px;
+                height: 50px;
+                align: middle;
+            }
+            #bt{
+                background-color: green;
+                /*height: 400px;*/
+                /*display:none;*/
+            }
+        </style>
+    </head>
+    <body>
+        <!--default is block-->
+        <div class="par">"TO write content" is not displayed</div>
+        <div class="p">"TO write content" is displayed</div>
+        
+        <!--span become a block mark using display:block-->
+        <span class="block-span">A</span>
+        <span>B</span>
+        <span>C</span>
+        
+        <p>
+        <span id="bt">B</span>
+        <img id="imgLogo" src="../public_html/img/logo.png" alt="" title="logo">
+        <span>C</span>
+        </p>
+    </body>
+</html>
+
+
+
+
+

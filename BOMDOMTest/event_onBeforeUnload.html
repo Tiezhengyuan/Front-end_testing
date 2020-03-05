@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="http://google.com">
+            <table class="" id="">
+                <tr>
+                    <td>user name:</td>
+                    <td><input id="user" type="text"></input></td>
+                </tr>
+                <tr>
+                    <td>password:</td>
+                    <td><input id="password" type="password"></input></td>
+                </tr>
+                <tr>
+                    <td><input id="btn" type="submit" value="submit"></input></td>
+                    <td><input id="btn2" type="reset" value="reset"></input></td>
+                </tr>
+            </table>
+            <hr>
+        </form>
+        <script type="text/javascript">
+            console.log('load JS');
+            //warn user when leaving the page
+            window.onbeforeunload =function(){
+                return 'Are you sure to leave the page?';
+            }
+            //warning if either user name or password is empty
+            var btn = document.getElementById('btn');
+            var usr = document.getElementById('user');
+            var pw = document.getElementById('password');
+            /*method1:
+            btn.onclick = function(e){
+                if ( !usr.value){
+                    alert('Error: user name is empty!')
+                    return false;
+                }else if (!pw.value){
+                    alert('Error: password is empty!')
+                    return false;
+                }
+            }
+            */
+            /*method2:
+             * 
+             */
+            if(btn.addEventListener){
+                btn.addEventListener('click', alertEmpty, false);
+            }else{
+                btn.attachEvent('onclick', alertEmpty);
+            }
+            
+            function alertEmpty(e){
+                e = e || window.event;
+                var tag=1;
+                if ( !usr.value){
+                    alert('Error: user name is empty!')
+                    tag=0;
+                }else if (!pw.value){
+                    alert('Error: password is empty!')
+                    tag=0;
+                }    
+                if(tag==0){
+                    if(e.preventDefault){
+                        e.preventDefault(); //chrome
+                    }else{
+                        e.returnValue = false; // IE8
+                    }
+                }
+            }
+            
+            //clear button
+            
+    
+        </script>    
+    </body>
+</html>
+
+
+
+
+

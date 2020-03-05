@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/javascript">
+            console.log('load JS');
+            //pass multiple arguments by an object for better understanding
+            function squareArea(sa){
+                //sa{a_len:#number, b_len:#number, color:red, text:'Area is.'}
+                var area= sa.a_len * sa.b_len;
+                console.log(sa.text+area.toString());
+                return area;
+            }
+            //
+            var area_obj = new Object();
+            area_obj.a_len=10;
+            area_obj.b_len=45;
+            area_obj.color='grey';
+            area_obj.text='The area is ';
+            squareArea(area_obj);
+        </script>    
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            html, body, div, ul, li{
+                padding: 0;
+                margin: 0;
+            }
+            ul, ol{
+                list-style: none;
+            }
+            .tab-wrap{
+                border: 1px solid purple;
+                width: 636px;
+            }
+            .tab-wrap .tab-hd{
+                overflow: hidden;
+            }
+            .tab-wrap .tab-hd .tab-hd-item{
+                float: left;
+                width: 200px;
+                height: 30px;
+                line-height: 30px;
+                background-color: lightgrey;
+                text-align: left;
+                border: 1px solid brown;
+                padding: 5px;
+            }
+            .tab-wrap .tab-hd .tab-hd-item:hover{
+                background-color: brown;
+                cursor: pointer;
+            }
+            .tab-wrap .tab-bd .tab-bd-item{
+                background-color: lightblue;
+                border: 1px solid purple;
+                width: 634px;
+                display: none;
+            }
+            .tab-wrap .tab-bd .on{
+                display: block;
+            }
+            .tab-wrap .tab-bd .tab-bd-item .tab-bd-item-div{
+                float: left;
+            }
+            .tab-wrap .tab-bd li span{
+                //float: right;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="tab-wrap" id="">
+            <ul class="tab-hd">
+                <li class="tab-hd-item">woman</li>
+                <li class="tab-hd-item">plan</li>
+                <li class="tab-hd-item">animal</li>
+            </ul>
+            <ul class="tab-bd">
+                <li class="tab-bd-item on">
+                    <div class="tab-bd-item-div" id="">
+                        <img src="./woman.jpg"></img>
+                    </div>
+                    <div class="tab-bd-item-div" id="">
+                        <span>I am a tiger</span>
+                        <a href="#">select me</a>
+                    </div>
+                </li>
+                <li class="tab-bd-item">
+                    <img src="./plan.jpg"></img>
+                    <a href="#">order it</a>
+                </li>
+                <li class="tab-bd-item">
+                    <img src="./animal.jpg"></img>
+                    <a href="#">buy it</a>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".tab-hd-item").on('click',function(e){
+                    //get current head index
+                    //var index = $(".tab-hd-item").index(this);
+                    //console.log(index);
+                    //var bd = $(".tab-bd-item").get(index);
+                    var bd = $(".tab-bd-item").get($(this).index());
+                    $(bd).addClass("on");
+                    $(bd).siblings().removeClass("on");
+                });
+            });
+        </script>    
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "Front-end_testing",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "zhang xia",
+    "contributors": [
+    ],
+    "dependencies": {}
+}

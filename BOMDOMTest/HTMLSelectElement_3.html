@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src='./documentReady.js'></script> 
+        <style>
+            #div{
+                border: 1px solid purple;
+            }
+            table, td{
+                padding: 10px;
+            }
+            .sel{
+                width: 150px;
+                height: 300px;
+            }
+            .sbtn{
+                padding: 0px;
+                margin: 0px;
+                height: 20px;
+                width: 60px;
+                font-weight: bold;
+            }
+            span{
+                font-size: 18px;
+            }
+            #b5{
+               margin: 10px auto;
+               text-align: center;
+               line-height: 50px;
+            }
+            #btn5{
+               height: 40px;
+               width: 100px;
+               font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="div">
+            <table class="" id="">
+                <tr>
+                    <td><span>information</span>
+                        <select class="sel" id="sel1" multiple="multiple">
+                        </select>
+                    </td>
+                    <td>
+                        <div class="" id="divSel">
+                            <p><input class="sbtn" id="btn1" type="button" value=">"></input></p>
+                            <p><input class="sbtn" id="btn2" type="button" value=">>"></input></p>
+                            <p><input class="sbtn" id="btn3" type="button" value="<"></input></p>
+                            <p><input class="sbtn" id="btn4" type="button" value="<<"></input></p>                            
+                        </div>
+                    </td>
+                    <td><span>Selected</span>
+                        <select class="sel" id="sel2" multiple="multiple">
+                            <option></option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div id="b5"><input class="sbtn" id="btn5" type="button" value="OK"></input></div>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    //
+                    var data = ['first name', 'last name', 'age', 'gender',
+                        'cellphone', 'office phone', 'email', 'address'];
+                    var s1 = document.getElementById("sel1");
+                    var s2 = document.getElementById("sel2");
+                    //initSel1
+                    initSel1(data, s1, 'opt1');
+                    //move all
+                    var b2 = document.getElementById('btn2');
+                    b2.onclick = function(){
+                        s1.options.length=0;
+                        initSel1(data, s2, 'opt2', s1);
+                    }
+                    var b4 = document.getElementById('btn4');
+                    b4.onclick = function(){
+                        s2.options.length=0;
+                        initSel1(data, s1, 'opt1');
+                    }   
+                    //move some
+                    var b1 = document.getElementById('btn1');
+                    b1.onclick = function(){
+                        moveSome(s1, s2, 'opt2');
+                    }    
+                    var b3 = document.getElementById('btn3');
+                    b3.onclick = function(){
+                        moveSome(s2, s1, 'opt1');
+                    }    
+                    
+                    //
+                    var b5 = document.getElementById('btn5');
+                    b5.onclick = function(){
+                        var a = new Array();
+                        for (var i = 0; i < s2.options.length; i++) {
+                            console.log(s2.options[i]);
+                             a.push(s2.options[i].text);
+                        }
+                        console.log(a);
+                    }
+                });
+                
+                function initSel1(data, leftSel, className){
+                    leftSel.options.length=0;
+                    //console.log(leftSel);
+                    for (var i = 0; i < data.length; i++) {
+                        var opt = document.createElement('option');
+                        opt.value = i;
+                        opt.class = className;
+                        opt.text = data[i];
+                        leftSel.add(opt, null);
+                    }
+                }
+                
+                function moveSome(leftSel, rightSel, className){
+                    for (var i = 0; i < leftSel.options.length; i++) {
+                        if(leftSel.options[i].selected){
+                            //add one option
+                            var opt2 = document.createElement("option");
+                            //console.log(leftSel.options[i].value);
+                            opt2.value = leftSel.options[i].value;
+                            opt2.class = className;
+                            opt2.text = leftSel.options[i].text;
+                            //console.log(opt2);
+                            rightSel.add(opt2, null);    
+                            //remove the option
+                            leftSel.options[i].remove();
+                        }
+                    }
+                }
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

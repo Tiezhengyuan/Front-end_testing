@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <ul class="list1">
+            <li>a</li>
+            <li class="on">b</li>
+            <li>c</li>
+        </ul>
+        <ul class="list2">
+        </ul>
+
+        <script type="text/javascript">
+            var arr= [11, 12, 13, 14];
+            $(function(){
+                var newArr = arr.map(function(index,value){
+                    return value+5;
+                })
+                //console.log(newArr);
+            });
+            
+            // 
+            $(function(){
+                var newArr = jQuery.map(arr, function(index,value){
+                    return value+10;
+                })
+                console.log(newArr);
+            });
+        </script>    
+    </body>
+</html>

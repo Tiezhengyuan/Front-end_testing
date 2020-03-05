@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="table" id="dtable">
+            <h3>samples</h3>
+            <table border="1" class="" id="table">
+                <tr>
+                    <th>sample name</th>
+                    <th>file name</th>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                window.onload = function(){
+                    var t = document.getElementById("table");
+                    var trList = t.getElementsByTagName("tr");
+                    for (var i = 0; i < trList.length; i++) {
+                        trList[i].onclick = rowHandler;
+                        //console.log(i);
+                    }
+                    //
+                    function rowHandler(e){
+                        var t = document.getElementById("table");
+                        var trList = t.getElementsByTagName("tr");
+                        e = e || window.event;
+                        if(e.ctrlKey){
+                            this.style.backgroundColor ="lightrey";
+                            console.log(this.style.backgroundColor);
+                        }else{
+                            console.log(this.innerHTML);
+                        }
+                    }
+                }
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

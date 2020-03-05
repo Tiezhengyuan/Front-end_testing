@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+        // Using Date objects
+        var start = new Date('02/12/2019')
+        // The event to time goes here:
+        var end =  new Date()
+        var elapsed = end - start // elapsed time in milliseconds
+        console.log(elapsed);
+        var elapsed_day = Math.round(elapsed/(1000*60*60*24));
+        console.log(elapsed_day);
+        //
+        console.log(end.getYear()+1900);
+        console.log(end.getMonth()+1);//get month
+        console.log(end.getDay()); //0-7 Sunday-Saturday
+        console.log(end.getHours());
+        
+        //export to string
+        console.log(end.toDateString());
+        console.log(end.toLocaleDateString());
+        console.log(end.toString());
+        console.log(end.toISOString());
+        
+        //string to date;
+        var d = new Date('05/30/2000');
+        console.log(d);
+        var d = new Date('05/30/20'); // default 2020
+        console.log(d);
+        var d = new Date('5/3/00');//05/03/2000
+        console.log(d);
+        var d = new Date(2111, 4, 2); // May 2nd, 2111
+        console.log(d);
+        </script>    
+        
+    </body>
+</html>
+
+
+
+
+

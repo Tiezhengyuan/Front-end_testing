@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var a=[1,2,3,4,5,6,7,8,9];
+            //slice(a, b) : a start index, b is end index
+            console.log(a.slice(5)); //return 6,7,8,9
+            console.log(a.slice(5,8)); //return 6,7,8
+            console.log(a.slice(5,10)); //return 6,7,8,9
+           console.log(a.slice(5,-1)); //return 6,7,8
+           console.log(a.slice(-4,-1)); //return 6,7,8
+           console.log(a.slice(-4)); //return 6,7,8,9
+           console.log(a.slice(-40)); //return all items
+           
+           //create 2D array
+           var b=new Array(12).fill(0);
+           console.log(b);
+           var b2= new Array();
+           for (var i=0; i<12; i+=3){
+               b1=b.slice(i,i+3)
+               console.log(b1);
+               b2.push(b1)
+           }
+            console.log(b2);
+            console.log([[0,0,0],[0,0,0]]);
+        </script>    
+    </body>
+</html>
+
+
+
+
+

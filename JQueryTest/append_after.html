@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            html, body, div{
+                padding: 0;
+                margin: 0;
+            }
+            .label-wrap{
+                height: 80px;
+                width: 400px;
+                line-height: 30px;
+                padding: 10px;
+                border: 1px solid purple;
+                oveerflow: hidden;
+                font-size: 18px;
+            }
+            .label-wrap .text-lb{
+                height: 30px;
+                width: 60px;
+                margin: 5px;
+                line-height: 30px;
+                float: left;
+                cursor: pointer
+            }
+            .label-wrap .lb-span{
+                float: left;
+                border: 1px solid purple;
+                padding: 0 10px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="label-wrap">
+            <span class="lb-span">jquery</span>
+            <span class="lb-span">jquery</span>
+            <input class="text-lb" id="text" type="text"></input>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $("#text").on('keydown', function(e){
+                    //console.log(e);
+                    if($(this).val().length > 0){
+                        if(e.which == 13){// which ==13 enter key code
+                            var $newSpan = $('<span class="lb-span">' + $(this).val() + '</span>');
+                            $(this).before($newSpan);
+                            $(this).val("");
+                        }
+                    }else{
+                        if (e.which == 8){//8 is del key code
+                            var txt = $(".label-wrap .lb-span:last").val();
+                            $(this).val(txt);
+                            $(".label-wrap .lb-span:last").remove();
+                            //e.preventDefault();
+                            //e.stopPropagation();
+                        }
+                    }
+                });//
+                
+                //focus text area once click whithin any area of the box
+                $(".label-wrap").on('click', function(e){
+                        $(".text-lb").focus();
+                });//
+            });
+        </script>    
+    </body>
+</html>

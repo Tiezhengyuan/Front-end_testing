@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js">        </script>    
+        <style>
+            div{
+                border: 1px solid purple;
+                height: 200px;
+                width: 200px;
+                position: absolute;
+            }
+            #btn{
+                position: absolute;
+                right: 5px;
+                top: 2px;
+            }
+            #db{
+                height:60px;
+                width: 60px;
+                border: 1px solid black;
+                position: relative;
+                left: 5px;
+                top: 2px;
+                background-image: url('gotop.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="div">
+            <input id="btn" type="button" value="OK"></input>
+            <div class="" id="db"></div>
+            dasff
+        </div>
+        
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    var d = document.getElementById("div");
+                    var t = document.getElementById("btn");
+                    var db = document.getElementById("db");
+                    t.onclick = function(e){
+                        //alert(123);
+                        d.style.display = "none";
+                    }
+                    db.onclick = function(e){
+                        d.style.display = "none";
+                    }
+                });
+
+            })();
+        </script>    
+    </body>
+</html>
+
+
+
+
+

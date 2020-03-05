@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            div{
+                border: 1px solid purple;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Files of results</h3>
+        <div class="div-box" id="div">
+            <ul class="list">
+            </ul>
+        </div>
+        <div class="" id="">
+            <input id="btn1" type="button" value="download"></input>
+            <input id="btn2" type="button" value="download all"></input>
+        </div>
+        <script type="text/javascript">
+            data = ['file1.txt', 'read_counts.txt', 'qc.png', 'var.txt']
+            $(function(){
+                //
+                appendList();
+                //highlight the selected line
+                selList();
+                //download
+                download();
+            });
+            
+            function appendList(){
+                //console.log(data);
+                var arr = new Array();
+                for (var i = 0; i < data.length; i++) {
+                    arr.push('<li>' + data[i] + '</li>');
+                }
+                //$(".list").val(arr.join("\n"));
+                $p=$(arr.join("\n"));
+                $(".list").append($p);
+            }
+            
+            function selList(){
+                
+                //console.dir($("li"));
+                $("li").on('click', function(e){
+                    $(this).css("backgroundColor", 'grey');
+                    //siblings() , siblings.css is wrong
+                    $(this).siblings().css("backgroundColor", 'white');
+                });
+            }
+            
+            function download(){
+                $("#btn1").on('click', function(e){
+                    var t = $(".list li.selected").("value");
+                    console.log(t);
+                });
+            }
+            
+            function downloadAll(){
+                $("#btn2").on('click', function(e){
+                    var t = [];
+                    for (var i = 0; i < $("li").length; i++) {
+                        t.push($("li")[i].text());
+                    }
+                    console.dir(t);
+                });
+            }
+        </script>    
+    </body>
+</html>

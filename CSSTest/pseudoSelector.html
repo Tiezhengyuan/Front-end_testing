@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p{
+                font-size:20px;
+            }
+            p:first-letter{
+                font-size:35px;
+                color:red;
+            }
+            /*order: LoVe HAte ->link->visited->hover->active*/
+            a:link{
+                color: black;
+            }
+            a:visited{
+                color:blue;
+            }
+            a:hover{
+                color: white;
+                background-color: black;
+            }
+            a:active{
+                color:gold;
+            }
+            input:focus{
+                color: red;
+            }
+            span:first-child{
+                color:red;
+                font-size:50px;
+            }
+            #main::before{
+                content:"---";
+            }
+            #main::after{
+                content:"---";
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <p><a href="#">home</a></p>
+            <p><a href="#">news</a></p>
+            <p><a href="#">sports</a></p>
+        </div>
+        <hr>
+        <!--emphasize current input-->
+        <input type="text">
+        <hr>
+        <!--span:first-child-->
+        <!--span must be encompassed by p-->
+        <p>
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+        </p>
+        
+        <p>
+            
+        </p>
+    </body>
+</html>
+
+
+
+
+

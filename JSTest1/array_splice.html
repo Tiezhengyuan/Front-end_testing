@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var a=[1,2,3,4,5,6,7];
+            console.log(a);
+            a.splice(2,3); //remove 3,4,5
+            console.log(a);
+            a.splice(2,0,3); //add 3 in the index 2
+            console.log(a);
+            a.splice(3,0,4,5); //add 4 and 5 in the index 3
+            console.log(a);
+            a.splice(2,0,30); //replace the 3rd with 30
+            console.log(a);
+            a.splice(-3); //remove the last three elements
+            console.log(a);
+            //note the difference of the following 
+            a.splice(0,2); //remove the first two elements
+            console.log(a);
+            a.splice(2); //keep the first two elements
+            console.log(a);
+        </script>    
+    </body>
+</html>
+
+
+
+
+

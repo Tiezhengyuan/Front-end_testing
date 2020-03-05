@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+    
+        </style>
+    </head>
+    <body>
+        <input id="btn" type="button" value="OK"></input>
+        <script type="text/javascript">
+            console.log('load JS');
+            var btn = document.getElementById("btn");
+            if(btn.addEventListener){
+                btn.addEventListener('click', function(){
+                    alert('dom 2');
+                }, false);
+            }else{
+                btn.attachEvent('onclick', function(){
+                    alert('dom 2');
+                })
+            }
+            btn.onclick=function(){
+                alert('dom 0');
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

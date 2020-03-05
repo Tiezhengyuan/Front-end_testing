@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue-dev/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myApp">
+            <p>The machine costs {{ price}}</p>
+            <p>It price plus tax {{ priceInTax}}</p>
+            <hr/>
+            <p>Price plus tax in Chinese {{priceInRMB}})</p>
+        </div>
+        
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                price: 2340,
+            },
+            computed:{
+                priceInTax: function(){
+                    return this.price*1.1;
+                },
+                priceInRMB: function(){
+                    return Math.round(this.priceInTax*6.9);
+                },
+            },
+        });
+    </script>
+
+    </body>
+</html>

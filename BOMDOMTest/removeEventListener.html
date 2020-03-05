@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="btn1" type="button" value="OK"></input>
+        <input id="btn2" type="button" value="remove"></input>
+        <input id="btn3" type="button" value="add"></input>
+        <script type="text/javascript">
+            console.log('load JS');
+            var btn1 = document.getElementById("btn1");
+            btn1.addEventListener('click',demo,false);
+            function demo(){
+                alert('12');
+            }
+            var btn2 = document.getElementById("btn2");
+            btn2.addEventListener('click', removeDemo, false);
+            function removeDemo(){
+                btn1.removeEventListener('click', demo, false);
+            }
+            var btn3 = document.getElementById("btn3");
+            btn3.addEventListener('click', addDemo, false);
+            function addDemo(){
+                btn1.addEventListener('click', demo, false);
+            }            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

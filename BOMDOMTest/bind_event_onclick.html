@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- method 1: add the attribute onclick to a mark -->
+        <!-- this method is not suggested because JS was embedded into HTML. Poor maintenance -->
+        <!-- Note: demo() works, but demo will not work -->
+        <!-- components of an event: event source: p, event name: onclick, behavior method: demo -->
+        <p onclick="demo()">
+            abc
+        </p>
+        <input type="button" value="OK" onclick="demo()">
+
+        </input>
+        <script type="text/javascript">
+            console.log('load JS');
+            function demo(){
+                window.alert("123");
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

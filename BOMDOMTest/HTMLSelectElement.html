@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js"></script>    
+        <style>
+            #div{
+                height: 30px;
+                line-height: 30px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="div">
+            Select a city:
+            <select id="sel">
+                <option value='0'>NA</option>
+            </select>
+            <input id="btn" type="button" value="OK"></input>
+        </div>
+        
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    //data
+                    var data = [
+                        {name:'Beijing', value:1},
+                        {name:'Shanghai', value:2},
+                        {name:'Tianjin', value:3},
+                        {name:'Chongqing', value:4}
+                    ];
+                    var sel = document.getElementById("sel");
+                    
+                    //initiate select options
+                    initSel(data);
+                    
+                    //set button
+                    btnHandler();
+                    
+                    //set change event
+                    selHandler();
+                });
+                
+                //bind change event to select options
+                function selHandler(){
+                    sel.onchange = function(e){
+                        var selOpt = sel.options[sel.selectedIndex];
+                        console.log(selOpt);
+                    }
+                }
+                //
+                function btnHandler(){
+                    var t = document.getElementById("btn");
+                    t.onclick = function(e){
+                        var selValue = sel.options[sel.selectedIndex].value;
+                        console.log(selValue);
+                        var selText = sel.options[sel.selectedIndex].text;
+                        console.log(selText);
+                    }                    
+                }
+                //
+                function initSel(data){
+                        //var opt= new Array();
+                        var items;
+                        for (var i = 0; i < data.length; i++) {
+                            /*
+                            items=['<option value="', data[i].value, 
+                            '">', data[i].name, '</option>'].join("");
+                            console.log(items);
+                            opt.push(items);
+                            */
+                           var opt = document.createElement("option");
+                           opt.setAttribute("value", data[i].value);
+                            if(opt.textContent){
+                                opt.textContent = data[i].name;
+                            }else{
+                                opt.innerText = data[i].name;
+                            }
+                            sel.appendChild(opt);
+                        }
+                        //set the first one is default 
+                        sel.selectedIndex = '1';
+                }//end initSel()
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

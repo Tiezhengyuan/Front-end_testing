@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            //pass multiple arguments
+            function diff(a,b){
+                console.log(diff.length);
+                console.log(arguments);
+                console.log(arguments.length);
+                return a-b;
+            }
+            diff(3,54);
+            diff(3,1,2,4);
+            
+            //arguments number is unknown
+            function interestRate(...arguments){
+                //standard: pass two arguments a,b return a-b
+                //exceptional: none arguments, >2 arguments
+                if(arguments.length==0){
+                    return NaN;
+                }else if(arguments.length==1){
+                    var a=arguments[0];
+                    return a*(1+0.045);
+                }else if(arguments.length==2){
+                    var a=arguments[0];
+                    var b=arguments[1];
+                    return a*(1+b);
+                }else if(arguments.length>=3){
+                    var a=arguments[0];
+                    var b=arguments[1];
+                    var c=arguments[2];
+                    return a*(1+b)+c;
+                }
+            }
+            console.log(interestRate());
+            console.log(interestRate(4000));
+            console.log(interestRate(4000,0.06));
+            console.log(interestRate(4000,0.06,150));
+        </script>    
+    </body>
+</html>
+
+
+
+
+

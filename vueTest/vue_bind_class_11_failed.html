@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue-dev/dist/vue.js"></script>
+        <link rel="stylesheet" href="../public_html/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="myApp">
+            <div class="active">red text</div>
+            <div v-bind:class="{ active: isActive }">red text</div>
+            <button @click="btnclick()">change class</button>
+        </div>
+        
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                isActive: true,
+            },
+            methods:{
+                btnclick: function(){
+                  this.isActive = false;  
+                },
+            },
+        });
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul id="city">
+            <li>Cary</li>
+            <li>Deuham</li>
+            <li>Chapel Hill</li>
+        </ul>
+
+        <script type="text/javascript">
+            console.log('load JS');
+            var t1 = document.querySelectorAll("#city li");
+            /*
+            //method 1: querySelectorAll() + forEach()
+            t1.forEach(function(element, index){
+                element.onclick = function (){
+                    alert(this.innerHTML);
+                }
+            });
+            */
+           //method 2: save memory usage
+           t1.forEach(function(element, index){
+               element.onclick = clickHandler;
+           });
+           function clickHandler(){
+                alert(this.innerHTML);
+            }
+           
+        </script>    
+    </body>
+</html>
+
+
+
+
+

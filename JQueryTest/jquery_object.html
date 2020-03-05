@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <input id="btn" type="button" value="OK"></input>
+        <script type="text/javascript">
+            //DOM method
+            window.onload = function(){
+                var t1 = document.getElementById("btn");
+            }
+                       
+           //jquery method: $("") == querySelector() in DOM
+           var $b = $("#btn");
+           console.dir($b);
+           
+            // convert jquery object to dom object
+            var t2 = $b[0];
+            console.dir(t2);
+            
+            // convert dom object to jquery object
+            var $b2 = $(t2);
+            console.dir($b2);
+        </script>    
+    </body>
+</html>

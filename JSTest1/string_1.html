@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //initiate  a string
+            var a='124', b="adsf", x=4;
+            console.log(a);
+            console.log(b);
+            console.log(a+": "+b);
+            console.log(x.toString()+"==asdfasd");
+            var c="\"I am ok.\""
+            console.log(c);
+            
+            //
+            var t= new String("1234567890");
+            console.log(t.length);
+            //bind string
+            console.log(t.concat('-adsf'));
+            // slice string equal to subString() in R
+            console.log(t.slice(0,3)); 
+            //string fucntion charAt() used for the type const only
+            // expected output: "The character at index 4 is q"
+            const sentence = 'The quick brown fox jumps over the lazy dog.';
+            const index = 4;
+            console.log('The character at index ' + index + ' is ' + 
+                    sentence.charAt(index));
+            
+            //
+            var g='ATGCgttcatT';
+            console.log(g.toLowerCase());
+            console.log(g.toUpperCase());
+            
+            //split
+            g='456-789-3421';
+            console.log(g.split('-'));
+            console.log(g.split(''));
+            console.log(g.split('-',2))
+            //replace
+            console.log(g.replace('-',''));
+            console.log(g.replace(/-/gi,''));
+            //substring
+            console.log(g.substring(0,3));
+            console.log(g.substr(0,3));
+            //trim
+            g='\t   456 - 789-3421  \n';
+            console.log("="+g.trim()+"=");
+            //search
+            g='Blue Whale';
+            console.log(g.indexOf('Whale'));//match
+            console.log(g.indexOf('whale'));//upper/lower case sensitive
+            console.log(g.indexOf(''));
+            console.log(g.indexOf(' '));//search white space
+            console.log(g.indexOf('d'));//failure 
+            console.log(g.lastIndexOf('l')); // search from the end
+            console.log(g.indexOf('l',5)); // search from the index=5
+            
+            //reverse a string
+            a='123456789';
+            console.log(a);
+            //string -> array -> reverse array -> join to string
+            console.log(a.split('').reverse().join(''));
+        </script>    
+    </body>
+</html>
+
+
+
+
+

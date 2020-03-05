@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div{
+                border: 1px solid red;
+            }
+            p{
+                margin: 10px;
+                border: 1px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" id="box">
+            <p class="" id="">
+                a
+            </p>
+            <p class="" id="">
+                b
+            </p>
+            <p class="" id="">
+                c
+            </p>
+        </div>
+        
+        <script type="text/javascript">
+            (function(){
+                window.onload=function(){
+                    var box = document.querySelector(".box");
+                    box.onmousedown = function (){
+                        console.log('down');
+                    }
+                    box.onmouseup = function (){
+                        console.log("up");
+                    }
+                    box.onclick = function (e){
+                        console.log("click");
+                    }
+                    // only trigger one time once mouse is enter
+                    box.onmouseenter = function(){
+                        console.log("enter");
+                    }
+                    //onmouseenter and onmouseleave is counterpart each other
+                    box.onmouseleave = function (){
+                        console.log("leave");
+                    }
+                    //trigger it when mouse is on the element
+                    // could be triggered many times
+                    box.onmouseover = function (){
+                        console.log("over");
+                    }
+                    //leave child or this element
+                    box.onmouseout = function (){
+                        console.log("out");
+                    }
+                }
+                //document.onreadystatechange;
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

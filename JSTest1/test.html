@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- js: alert() -->
+        <h1 onclick="alertMessage()">title</h1>
+        <!-- string in JS must be encompassed by not " but ' -->
+        <p onclick="myFunction(this, 'red')">Click me to change text color.</p>
+        <input type="button" onclick="externalMessage()" value="OK">
+        
+        <!-- JS -->
+        <script src="test.js"></script>
+        <script>
+            function alertMessage(){
+                alert("wrong");
+            }
+            function myFunction(elmnt,clr) {
+                elmnt.style.color = clr;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+

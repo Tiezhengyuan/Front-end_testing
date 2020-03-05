@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src='./documentReady.js'></script> 
+        <style>
+            #text{
+                height: 100px;
+                width: 200px;
+            }
+            .sel{
+                width: 100px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="sel">
+            <p class="" id="">
+                Select province and city:
+            </p>
+            <select class="sel" id="sel1">
+            </select>
+            <select class="sel" id="sel2">
+            </select>
+            <p class="" id="output">
+                <input id="btn" type="button" value="OK"></input>
+                <input id="text" type="textArea"></input>
+            </p>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    //data
+                    var data = [
+                        {name:'Anhui', value:1, city:[
+                            {name:'Hefei', value:1},
+                            {name:'Wuhu', value:2},
+                            {name:'Huangshan', value:3}
+                        ],},
+                        {name:'Beijing', value:2, city:[]},
+                        {name:'Henai', value:3, city:[
+                            {name:'Zhengzhou', value:1},
+                            {name:'Luoyang', value:2},
+                            {name:'Hejian', value:3}
+                        ],},
+                        {name:'Hebei', value:4, city:[
+                            {name:'Shijiazhuang', value:1},
+                            {name:'Langfang', value:2},
+                            {name:'Yanjiao', value:3}
+                        ],},
+                        {name:'Shanghai', value:5, city:[]}
+                    ];
+                    
+                    //
+                    var s1 = document.getElementById("sel1");
+                    var s2 = document.getElementById("sel2");
+                    
+                    //initiate province select
+                    initSel(data, s1, s2);
+                    
+                    //initiate city select once a province is selected
+                    initSelCity(data, s1, s2);
+                    
+                    //get selected values
+                    getSel(s1, s2);
+                });//end myReady
+                
+                //
+                function getSel(s1, s2){
+                    var t = document.getElementById("btn");
+                    var txt = document.getElementById("text");
+                    t.onclick = function(e){
+                        var s1Text=s1.options[s1.selectedIndex].text;
+                        //console.log(s1Text);
+                        console.log(s2.selectedIndex);
+                        var s2Text;
+                        if(s2.selectedIndex>=0){
+                            s2Text=s2.options[s2.selectedIndex].text;
+                        }else{
+                            s2Text = 'NA';
+                        }
+                        txt.value = s1Text + ", "+ s2Text;
+                    }
+                }
+                //initiate select
+                function initSel(data, s1, s2){
+                    //province
+                    for (var i = 0; i < data.length; i++) {
+                        var opt = document.createElement('option');
+                        opt.value = data[i].value;
+                        opt.name = data[i].name;
+                        opt.text = data[i].name;
+                        s1.add(opt, null);
+                    }
+                    s1.selectedIndex = 0;
+                    //city
+                    var firstCity = data[0].city;
+                    for (var j = 0; j < firstCity.length; j++) {
+                        var opt2 = document.createElement("option");
+                        //console.log(firstCity[j]);
+                        opt2.value = firstCity[j].value;
+                        opt2.name = firstCity[j].name;
+                        opt2.text = firstCity[j].name;
+                        //console.log(opt2);
+                        s2.add(opt2, null);                        
+                    }
+                    s2.selectedIndex = 0;
+                };//end initSel
+                //
+                function initSelCity(data,s1, s2){
+                    s1.onchange = function (e){
+                        var selOpt = s1.options[s1.selectedIndex];
+                        console.log(selOpt);
+                        var selCity = data[s1.selectedIndex].city;
+                        console.log(selCity);
+                        //
+                        s2.options.length=0;
+                        for (var j = 0; j < selCity.length; j++) {
+                            var opt2 = document.createElement("option");
+                            //console.log(firstCity[j]);
+                            opt2.value = selCity[j].value;
+                            opt2.name = selCity[j].name;
+                            opt2.text = selCity[j].name;
+                            //console.log(opt2);
+                            s2.add(opt2, null);                        
+                        }
+                    }
+                }
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

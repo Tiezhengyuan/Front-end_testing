@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <style>
+        tr{
+            background-color: tan;
+        }
+    </style>
+    
+    <body>
+        <h3></h3>
+        <div class="" id="">
+            <table class="table" id="table1">
+                <tr>
+                    <th>Header</th>
+                    <th>Header2</th>
+                    <th>Header2</th>
+                    <th>Header2</th>                
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                //var $tr= $("tr");
+                $('tr').click (function(e){
+                    //console.log($(this).style.backgroundColor);
+                    // this stands for DOM object
+                    $(this).css("backgroundColor", 'green');
+                    $(this).siblings().css("backgroundColor", 'white');
+                });
+            });
+        </script>    
+    </body>
+</html>

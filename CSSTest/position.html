@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body,div{
+                padding:0;
+                margin:0;
+            }
+            div{
+                border: 2px solid royalblue;
+                background-color: lightcyan;
+            }
+            .relative{
+                height : 200px;
+                width : 200px;
+                position: relative;
+                left: 10px;
+                top: 20px;
+            }
+            .absolute{
+                height : 200px;
+                width : 200px;
+                background-color: brown;
+                position: absolute;
+                left: 50px;
+                top: 100px;
+            }
+            .parent{
+                height : 400px;
+                width : 500px;
+                background-color: yellow;
+                position: relative;
+            }
+            .child{
+                height : 40px;
+                width : 50px;
+                background-color: blue;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+            }
+            .f{
+                height: 100px;
+                width:100px;
+                background-color: red;
+                position: fixed;
+                bottom:0;
+                right:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="relative" id="">
+            dsafdsaf
+        </div>
+        <div class="absolute" id="">
+        
+        <!-- parent is relative, then child follow parent rule
+        even if child is absolute -->
+        </div>
+        <div class="parent" id="">
+            <div class="child" id="">
+                dasf
+            </div>
+        </div>
+        
+        <!-- fix position -->
+        <div class="f" id="">
+            absolute
+        </div>
+    </body>
+</html>
+
+
+
+

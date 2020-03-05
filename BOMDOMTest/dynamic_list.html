@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js"></script> 
+        <style>
+            #div1{
+                border: 1px solid purple;
+                height: 400px;
+                width: 200px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="div1">
+
+        </div>
+        <script type="text/javascript">
+            (function(){
+                //
+                var data = [
+                    {name:'home', url:'/index.html', id:1},
+                    {name:'about', url:'/about.html', id:2},
+                    {name:'product', url:'/product.html', id:3},
+                    {name:'usecase', url:'/usecase.html', id:4},
+                    {name:'contact', url:'/contact.html', id:5}
+                ]
+                //
+                document.myReady(function(){
+                    loadMenu();
+                });
+                
+                //            
+                function loadMenu(){
+                    var menu = document.getElementById("div1");
+                    for (var i = 0; i < data.length; i++) {
+                        //create node
+                        var liElement = document.createElement('li');
+                        //set attribute for the new node
+                        liElement.setAttribute('id', 'menu' + data[i].id);
+                        //append the node to the parent node
+                        menu.appendChild(liElement);
+                        //create a element in the li node
+                        var aElement = document.createElement('a');
+                        aElement.setAttribute('href', data[i].url);
+                        if(aElement.textContent){
+                            aElement.textContent = data[i].name;
+                        }else{
+                            aElement.innerText = data[i].name;
+                        }
+                        //aElement.innerHTML = data[i].name;
+                        liElement.appendChild(aElement);
+                        
+                    }
+                }
+            })();
+        </script>    
+    </body>
+</html>
+
+
+
+
+

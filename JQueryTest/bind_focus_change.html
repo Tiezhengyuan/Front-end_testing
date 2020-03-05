@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <div class="input-text" id="">
+            <input id="text1" type="text" value="1"></input>
+            <input id="text2" type="text" value="2"></input>
+            <input id="text3" type="text" value="3"></input>
+            <input id="text4" type="text" value="4"></input>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                var $input = $(".input-text input");
+                console.dir($input);
+                $input.focus(function(e){
+                    console.log(this.value);
+                });
+                //pass two arguments
+                $input.change('----', function(e){
+                    console.dir(e);
+                    console.log(this.value+e.data);
+                });
+                //pass no arguments
+                $input[3].focus();
+            });
+        </script>    
+    </body>
+</html>

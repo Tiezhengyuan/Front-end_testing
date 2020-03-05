@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div{
+                border: 1px solid purple;
+            }
+            .parent{
+                height: 200px;
+                width: 200px;
+                padding: 30px;
+                background-color: red;
+            }
+            .child{
+                height: 100px;
+                width: 100px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent" id="p">
+            parent
+            <div class="child" id="c">
+                child
+            </div>
+        </div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //bind an event to parent
+            // when clicking binding to child, parent respond
+            var parentDiv = document.querySelector(".parent");
+            parentDiv.onclick = function(){
+                alert("parent is clicked");
+            }
+            window.onclick = function(){
+                alert("window is clicked");
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

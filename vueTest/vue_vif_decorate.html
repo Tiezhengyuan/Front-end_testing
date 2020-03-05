@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue-dev/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myApp">
+            <div v-if="score == 0">no score released</div>
+            <div v-else-if="score < 60">The score is {{score}}. Failed</div>
+            <div v-else-if="score < 80">The score is {{score}}. Passed</div>
+            <div v-else>The score is {{score}}. Good</div>
+            <button @click="btnclick()">show a score</button>
+        </div>
+        
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                score: 0,
+            },
+            methods:{
+                btnclick: function(){
+                  this.score=Math.round(Math.random()*100);  
+                },
+            }
+        });
+    </script>
+
+    </body>
+</html>

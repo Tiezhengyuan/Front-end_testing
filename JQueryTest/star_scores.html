@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            html, body, div, ul, li{
+                padding; 0;
+                margin:0;
+            }
+            .star-div{
+                border: 1px solid purple;
+                height: 100px;
+                width: 300px;
+                font-size: 20px;
+            }
+            .star-div-ul{
+                list-style: none;
+            }
+            .star-div-ul li{
+                float: left;
+                width 20px;
+                margin: 10px;
+                cursor: pointer;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="star-div">
+            <span>Your score:</span>
+            <ul class="star-div-ul">
+                <!-- Decimal 9734 is white star -->
+                <li id="1">&#9734</li>
+                <li id='2'>&#9734</li>
+                <li id='3'>&#9734</li>
+                <li id='4'>&#9734</li>
+                <li id='5'>&#9734</li>
+            </ul>
+        </div>
+        <input id="btn" type="button" value="OK"></input>
+            
+        <script type="text/javascript">
+            $(function(){
+                $(".star-div-ul li").on('click',function(){
+                    //Hex code 2605 is black star
+                    $(this).text('\u2605').prevAll().text('\u2605');
+                    $(this).text('\u2605').nextAll().text('\u2606');
+                    //
+                    $(this).addClass('on').siblings().removeClass('on');
+                });
+                //Note: failed
+                $("#btn").on('click',function(){
+                    var index = $(".star-div-ul li .on").attr("value");
+                    console.log(index);
+                });
+            });
+        </script>    
+    </body>
+</html>

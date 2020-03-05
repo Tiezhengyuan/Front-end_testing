@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            #text{
+                height: 100px;
+                width: 200px;
+            }
+            .sel{
+                width: 100px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="sel">
+            <p class="" id="">
+                Select province and city:
+            </p>
+            <select class="sel" id="sel1">
+            </select>
+            <select class="sel" id="sel2">
+            </select>
+            <p class="" id="output">
+                <input id="btn" type="button" value="OK"></input>
+                <input id="text" type="textArea"></input>
+            </p>
+        </div>
+        <script type="text/javascript">
+            //data
+            var data = [
+                        {name:'Anhui', value:1, city:[
+                            {name:'Hefei', value:1},
+                            {name:'Wuhu', value:2},
+                            {name:'Huangshan', value:3}
+                        ],},
+                        {name:'Beijing', value:2, city:[]},
+                        {name:'Henai', value:3, city:[
+                            {name:'Zhengzhou', value:1},
+                            {name:'Luoyang', value:2},
+                            {name:'Hejian', value:3}
+                        ],},
+                        {name:'Hebei', value:4, city:[
+                            {name:'Shijiazhuang', value:1},
+                            {name:'Langfang', value:2},
+                            {name:'Yanjiao', value:3}
+                        ],},
+                        {name:'Shanghai', value:5, city:[]}
+            ];
+            //jquery
+            $(function(){
+                //initiate select
+                initSel1();
+                initSel2(data[0].city);
+                
+                //change province select
+                changeSelect();
+                
+                //get selected province and city
+                getInfo();
+            });
+            
+            function initSel1(){
+                //add province
+                var provArr = new Array();
+                for (var i = 0; i < data.length; i++) {
+                    var name = data[i].name;
+                    var value = data[i].name;
+                    //<option value="3">Beijing</option>
+                    provArr.push('<option value="'+value+'">'+name+'</option>');
+                }
+                $("#sel1").html(provArr.join("\n"));
+            }
+            
+            function initSel2(cities){
+                //add city
+                var cityArr = new Array();
+                for (var j = 0; j < cities.length; j++) {
+                    var name = cities[j].name;
+                    var value = cities[j].name;
+                    cityArr.push('<option value="'+value+'">'+name+'</option>');
+                }
+                $("#sel2").html(cityArr.join("\n"));
+            }
+            
+            function changeSelect(){
+                $("#sel1").change(function(){
+                    //get current selected
+                    var selProvince=$("#sel1").val(); 
+                    //console.log(selProvince);
+                    //get cities
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].name == selProvince){
+                            var selCity = data[i].city;
+                            break;
+                        }
+                    }
+                    initSel2(selCity);
+                });
+            }
+            
+            function getInfo(){
+                $("#btn").click(function(){
+                    // get all values
+                    var province = $("#sel1").val();
+                    var city = $("#sel2").val();
+                    console.log(province);
+                    console.log(city);
+                    //export to text area;
+                    $("#text").val(province+', '+city);
+                });
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

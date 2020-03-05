@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue-dev/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myApp">
+            <div v-if="seen">2019</div>
+            <ol>
+                <li v-for="game in games">{{game.title}}:{{game.price}}</li>
+            </ol>
+        </div>
+        
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                seen: true,
+                games:[{title:"a", price:400},
+                    {title:"a", price:400},
+                    {title:"a", price:400},],
+            },
+        });
+    </script>
+
+    </body>
+</html>

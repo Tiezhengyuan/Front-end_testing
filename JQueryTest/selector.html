@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <h3>asd</h3>
+        <div class="cd" id="div1">
+            <input class="text" id="text1" type="text" value="abc"></input>
+            <input class="btn" id="btn" type="button" value="OK"></input>
+            afdsaf
+        </div>
+        <div class="cd" id="div2">
+            <input class="text" id="text2" type="text" value="123"></input>
+            <input class="btn" id="btn2" type="button" value="OK"></input>
+            adsf
+        </div>
+        <div class="" id="">
+            5652435
+        </div>
+        <ul class="list">
+            <li>a</li>
+            <li>b</li>
+            <li>b</li>
+
+        </ul>
+
+        <script type="text/javascript">
+            //select all elements
+            $(function(){
+                //select all elements
+                var $all = $("*");
+                console.dir($all);
+                
+                //select by  class name
+                var $cd =$(".cd");
+                console.dir($cd);
+                
+                //select by element name
+                var $e = $("div");
+                console.dir($e);
+                
+                //select by id
+                var $b = $("#btn");
+                console.dir($b);
+                
+                //intersect selector
+                var $b2 = $("div .text");
+                console.dir($b2);
+                var $b3 = $("#div1 input");
+                console.dir($b3);
+                var $b4 = $(".cd .btn");
+                console.dir($b4);
+                
+                //union selector
+                var $u = $("div,h3");
+                console.dir($u);
+                
+                //return the first <li>
+                var $first = $(".list li:first");
+                console.dir($first);
+                
+                //container
+                // get all elements containing 'a'
+                var $c = $('div:contains("a")');
+                console.dir($c);
+                console.dir($c.text()); // get innerHTML
+                
+                //get all input text
+                var $t2 = $(".text");
+                console.dir($t2);
+                console.dir($t2.text());
+            });
+        </script>    
+    </body>
+</html>

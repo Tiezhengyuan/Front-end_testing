@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            #table-div{
+                border; 1px solid purple;
+            }
+            table{
+                padding: 5px;
+                text-align: center;
+            }
+            th,td{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            th{
+                background-color: grey;
+            }
+            td{
+                background-color: lightgrey;
+                font-size: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="" id="table-div">
+            <table class="" id="table1">
+            </table>
+            <form action="action">
+                <input id="btnRmv" type="button" value="remove all"></input>
+                <input id="btnAdd" type="button" value="add"></input>
+            </form>
+        </div>
+        
+        <script type="text/javascript">
+            data = [
+                {name:'a', age:12, gender:'F'},
+                {name:'b', age:22, gender:'M'},
+                {name:'c', age:62, gender:'F'}
+            ];
+            $(function(){
+                
+                //
+                initTable(data, $("#table1"));
+                
+                //remove all1
+                $("#btnRmv").on('click', function(){
+                    $("#table1 tr:not(:first)").remove();
+                    //console.log($("#table1 tr").length);
+                });
+                
+                //add one line
+                var newData = {name:'d', age:32, gender:'F'};
+                $("#btnAdd").on('click', newData, function(){
+                    addLine(data, newData);
+                });
+                
+                //failed
+                //highlight a row of a table
+                $("#table1 tr td").on('click', function(e){
+                    //alert(e.target.innerHTML);
+                    $("#table1 td").css("backgroundColor", 'lightgrey');
+                    $(this).css("backgroundColor", 'tan');
+                    $(this).siblings().css("backgroundColor", 'tan');
+                })
+            });
+            
+            function addLine(data, newItem){
+                    var header = Object.keys(data[0]);
+                    var valueArr = new Array();
+                    // set index based on rows counts
+                    valueArr[0] = $("#table1 tr").length;
+                    for (var i in header) {
+                        valueArr.push(newItem[header[i]]);
+                    }
+                    var newLine = '<tr>' + builtHTML('td', valueArr) + '</tr>';
+                    //console.log(newLine);
+                    $("#table1").append(newLine);                
+            }
+            
+            function initTable(data, jObj){
+                var lines = new Array();
+                // add header
+                var header = Object.keys(data[0]);
+                header.unshift("No.");
+                headLine = builtHTML('th', header);
+                lines.push(headLine);
+                // add rows
+                for (var i = 0; i < data.length; i++) {
+                    var d = new Array();
+                    d[0]=i+1;
+                    for (var j = 1; j < header.length; j++) {
+                        d.push(data[i][header[j]]);
+                    }
+                    var rowLine = builtHTML('td', d);
+                    //console.log(rowLine);
+                    lines.push(rowLine);
+                }
+                var allLines = builtHTML('tr', lines);
+                jObj.html(allLines);
+            }
+            
+            function builtHTML(element, inArr){   
+                var a = new Array();
+                for (var i = 0; i < inArr.length; i++) {
+                    a.push('<'+element+'>'+inArr[i]+'</'+element+'>');
+                }
+                return(a.join(""));
+            }
+            
+        </script>    
+    </body>
+</html>

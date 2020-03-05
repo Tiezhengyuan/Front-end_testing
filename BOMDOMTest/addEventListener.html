@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div{
+                border: 1px solid purple;
+                background-color: #c0d;
+            }
+            .parent{
+                height: 200px;
+                width: 200px;
+                padding: 30px;
+            }
+            .child{
+                height: 100px;
+                width: 100px;
+                background-color: #09d;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="click me" id="btn">
+
+        </input>
+        <div class="parent" id="">
+            parent div
+            <div class="child" id="">
+                child div
+            </div>
+        </div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var btn = document.querySelector("#btn");
+            //method 2: bind two event to a button
+            btn.addEventListener('click', 
+                function(){
+                    alert(this.innterHTML);
+                }, false);
+            btn.addEventListener('click', function(){
+                    alert('the second binding');
+                });
+            
+            //
+            var parentDiv = document.querySelector(".parent");
+            var childDiv = document.querySelector(".child");
+            /*
+            // act when it is capture
+            parentDiv.addEventListener('click',function(){
+                alert("parent div");
+            },true);
+            childDiv.addEventListener('click',function(){
+                alert("child div");
+            },true);
+            */
+            // act when it is capture
+            parentDiv.addEventListener('click',function(){
+                alert("parent div");
+            },false);
+            childDiv.addEventListener('click',function(){
+                alert("child div");
+            },false);           
+        </script>    
+    </body>
+</html>
+
+
+
+
+

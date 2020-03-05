@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body, div, ul, li{
+                padding:0;
+                margin:0;
+            }
+            body{
+                font-size: 16px;
+                font-style: normal;
+                font-family: Arial;
+            }
+            ul, li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: #286090;
+            }
+            .tn{
+                border-top: 4px solid #ff8500;
+                border-bottom: 1px solid #eeffe0;
+                height: 42px;
+                line-height: 42px;
+            }
+            .tn-nav li{
+                float: left;
+                padding: 0 15px;
+            }
+            .tn-nav li:hover, .tn-nav li:hover a{
+                color: #ff8500;
+                background-color: #edeef0;
+            }
+            .tn-main{
+                margin: 0 auto;
+                width:960px;
+            }
+            .tn-nav{
+                float: left;
+            }
+            .tn-person{
+                float: right;
+            }
+            .tn-person li{
+                float: right;
+                padding: 0 15px;
+            }
+            .tn-person li:hover .tn-person li:hover a{
+                color: #ff8500;
+                background-color: #edeef0;
+            }
+            .weibo-box{
+                display:none;
+            }
+            .weibo:hover .weibo-box{
+                display: block;
+            }
+            .weibo-box li:hover, .weibo-box li a:hover{
+                color: #ff8500;
+                background-color: #edeef0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tn" id="">
+            <div class="tn-main" id="">
+                <ul class="tn-nav">
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">cellphone</a></li>
+                    <li><a href="#">mobile</a></li>
+                </ul>
+                <ul class="tn-person">
+                    <li><a href="#">login</a></li>
+                    <li class="weibo">
+                        <a href="#">weibo</a>
+                        <ul class="weibo-box">
+                            <li><a href="#">private</a></li>
+                            <li><a href="#">comments</a></li>
+                            <li><a href="#">@me</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">email</a></li>
+                    <li><a href="#">site navigation</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

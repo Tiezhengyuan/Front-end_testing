@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <ul class="list">
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+
+        <script type="text/javascript">
+            var a = [1, 2, 3, 4];
+            var b= new Array();
+            //foreach method
+            a.forEach(function(value, index){
+               //console.log(index, value); 
+               b.push('<span>'+value+'</span>');
+            });
+            //console.log(b);
+            
+            //each() in jquery
+            $(function(){
+                $(".list li").each(function(index, elem){
+                   //console.log(index, elem); 
+                   //console.log(index, elem.innerHTML); 
+                });
+            }); 
+            
+            //
+            jQuery.each(b, function(index, elem){
+                //console.log(index, elem); 
+            });
+            $(function(){
+                jQuery.each($(".list li"), function(index, elem){
+                   console.log(index, elem); 
+                   console.log(index, elem.innerHTML); 
+                });
+            }); 
+
+        </script>    
+    </body>
+</html>

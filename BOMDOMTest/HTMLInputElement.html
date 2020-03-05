@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="box">
+            <input id="text1" type="text"></input>
+            <input id="text2" type="text"></input>
+            <input id="text3" type="text" value="123"></input>
+            <input id="text4" type="text"></input>
+            <input id="radio1" type="radio" checked></input>
+            <input id="btn" type="button" value="OK"></input>
+        </div>
+        <script type="text/javascript">
+            //HTMLInputElement->HTMLElement->
+            //Element->Node->EventTarget->Object
+            var box = document.getElementById("box");
+            var inputList = box.getElementsByTagName("input");
+            //select the first input box to improve usability
+            inputList[0].select();
+            //get value
+            var t = document.getElementById("btn");
+            t.onclick = function(){
+                //get input value: two methods
+                //console.log(inputList[2].value);
+                var t3 = document.getElementById("text3");
+                console.log(t3.value);
+                
+                //disable checked
+                //Note: boolean should not be encompassed
+                //inputList[4].checked = false;
+                var r1 = document.getElementById("radio1");
+                r1.checked = false;
+                console.log(r1.checked);
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

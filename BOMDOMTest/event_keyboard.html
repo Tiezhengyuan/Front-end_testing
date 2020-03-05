@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js"></script>    
+    </head>
+    <body>
+        <div class="" id="">
+            <input id="text" type="text"></input>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                //bind event using document.myReady()
+                document.myReady(function(){
+                    var t = document.getElementById("text");
+                    //monitor all keys events
+                    t.onkeydown = function(e){
+                        e= e || window.event;
+                        console.log("key down: "+ e.keyCode);
+                    }
+                    //take all characters as uppercase
+                    t.onkeypress = function(e){
+                        e= e || window.event;
+                        console.log("only char key: "+e.keyCode);
+                    }
+                    //don't take as uppercase
+                    t.onkeyup = function(e){
+                        e= e || window.event;
+                        console.log("key is up: "+e.keyCode);
+                    }
+                });
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

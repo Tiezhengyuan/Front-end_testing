@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var a=[90,8,34,2,39,87,22,10];
+            var b;
+            //small->large
+            b=a.sort(function(a,b){return a-b;});
+            console.log(b);
+            //large -> small
+            b=a.sort(function(a,b){return b-a;});
+            console.log(b);
+            
+            //get maximum and its index
+            a=[90,8,34,2,39,87,22,10];
+            var max=a.pop();
+            var max_index=[a.length], max_value=[max];
+            for(var i in a){
+                if (a[i]>max) {
+                    max=a[i];
+                    max_index=[i];
+                    max_value=[max];
+                }else if(a[i]==max){
+                    max_index.push(i);
+                    max_value.push(max);
+                }
+            }
+            console.log(max_index);
+            console.log(max_value);
+        </script>    
+        
+    </body>
+</html>
+
+
+
+
+

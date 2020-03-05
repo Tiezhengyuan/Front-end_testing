@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="text" type="text"></input>
+        <input id="number" type="number"></input>
+        <script type="text/javascript">
+            console.log('load JS');
+            var t = document.getElementById('text');
+            //event will be triggered once the keyword is pressed
+            t.onkeypress = function(e){
+                e= e || window.event;
+                console.log(e.keycode);
+                //ASCII: 0->48, 9->57
+                if(e.keyCode<48 || e.keyCode>57){
+                    console.log(e.keyCode);
+                    return false;
+                }
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>keep text input is not null</h3>
+        <!-- placehoder -->
+        Phone number: <input id="text1" type="text", placeholder="(xxx)xxx-xxxx"></input>
+
+        <!-- method2: onfocus+onblur -->
+        paired-end: <input id="text2" type="text" value="R1"></input>
+        <script type="text/javascript">
+            window.onload = function (){
+                var t2 = document.getElementById("text2");
+                t2.style.color = "grey";
+                t2.onfocus = function(){
+                    if(t2.value == 'R1'){
+                        t2.value = '';
+                        t2.style.color = "black";
+                    }
+                }
+                t2.onblur = function (){
+                    if(t2.value == ''){
+                        t2.value = 'R1';
+                        t2.style.color = "grey";
+                    }
+                }
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

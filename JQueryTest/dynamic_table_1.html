@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            #table-div{
+                border; 1px solid purple;
+            }
+            table{
+                padding: 5px;
+                text-align: center;
+            }
+            th,td{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            th{
+                background-color: grey;
+            }
+            td{
+                background-color: lightgrey;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="" id="table-div">
+            <table class="" id="table1">
+            </table>
+        </div>
+        
+        <script type="text/javascript">
+            data = [
+                {name:'a', age:12, gender:'F'},
+                {name:'b', age:22, gender:'M'},
+                {name:'c', age:62, gender:'F'}
+            ];
+            $(function(){
+                
+                //
+                initTable(data, $("#table1"));
+            });
+            
+            function initTable(data, jObj){
+                var lines = new Array();
+                // add header
+                var header = Object.keys(data[0]);
+                headLine = builtHTML('th', header);
+                lines.push(headLine);
+                //$("#table").html('<tr>'+headLine+'</tr>');
+                // add rows
+                for (var i = 0; i < data.length; i++) {
+                    var d = new Array();
+                    for (var j = 0; j < header.length; j++) {
+                        d.push(data[i][header[j]]);
+                    }
+                    var rowLine = builtHTML('td', d);
+                    lines.push(rowLine);
+                    //$("#table").append('<tr>'+rowLine+'</tr>');
+                }
+                var allLines = builtHTML('tr', lines);
+                jObj.html(allLines);
+            }
+            
+            function builtHTML(element, inArr){   
+                var a = new Array();
+                for (var i = 0; i < inArr.length; i++) {
+                    a.push('<'+element+'>'+inArr[i]+'</'+element+'>');
+                }
+                return(a.join(""));
+            }
+            
+        </script>    
+    </body>
+</html>

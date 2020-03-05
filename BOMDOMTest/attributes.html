@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="d1">TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //get attributes
+            var d1 = document.getElementById('d1');
+            //console.log(d1.innerHTML);
+            console.log(d1.attributes);
+            console.log(d1.attributes.item(0));
+            console.log( "Get value of the attribute id: "+ d1.getAttribute('id'));
+            console.log( "Get value of the attribute id: "+ d1.id);
+            //set attribute
+            d1.setAttribute('class', 123);
+            console.log('Set value of the attribute class: '+ d1.getAttribute('class'));
+            console.log('Set value of the attribute class: '+ d1.className);
+            // remove an attribute
+            d1.setAttribute('tiezheng', 345);
+            console.log(d1.attributes);
+            d1.removeAttribute('tiezheng');
+            console.log(d1.attributes);
+            //others
+            console.log('----------');
+            console.log(d1.tagName);
+            console.log(d1.innerHTML);
+            console.log(d1.className);
+            console.log(d1.id);
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

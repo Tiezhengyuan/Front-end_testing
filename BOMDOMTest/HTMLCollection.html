@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head name="head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p class="" id="">
+            k1
+        </p>
+        <p class="" id="">
+            k2
+        </p>
+        <p class="" id="">
+            k3
+        </p>
+        <div class="" id="">
+            d1
+        </div>
+        <div class="" id="">
+            d2
+        </div>
+        <div class="" id="">
+            d3
+        </div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //get all marks
+            //Note the array will be automatic updated.
+            var all = document.getElementsByTagName("*");
+            for (var i = 0; i < all.length; i++) {
+                console.log(all[i]);
+            }
+            console.log(all[1]);
+            console.log(all.item(1));
+            console.log(all.namedItem("head"));
+            
+            //convert pseudo array to array
+            var all_arr=Array.prototype.slice.call(all);
+            console.log(all_arr);
+        </script>    
+    </body>
+</html>
+
+
+
+
+

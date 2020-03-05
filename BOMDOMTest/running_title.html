@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            var ts = "The title is running";
+            window.document.title = ts;
+            var t = setInterval(demo, 500);
+            function demo(){
+                //window.document.title=Math.random();
+                window.document.title = ts;
+                var old = window.document.title;
+                var oldArr = old.split(' ');
+                var lastWord = oldArr.slice(-1).toString();
+                var other = oldArr.slice(0, -1).toString();
+                window.document.title= lastWord + ' ' + other;
+            }
+            
+            setTimeout(function(){
+                clearInterval(t);
+            }, 70000);
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js"></script>    
+        <style>
+            #table{
+                border: 0;
+            }
+            tr{
+                text-align: center;
+            }
+            th,td{
+                padding: 10px;
+            }
+            th{
+                background-color: grey;
+                font-size: 30px;
+            }
+            td{
+                background-color: lightgrey;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="" id="">
+            <table class="" id="table">
+            </table>
+            <input id="btnSel" type="button" value="Select"></input>
+            <input id="btnDel" type="button" value="Delete"></input>
+            <input id="btnClr" type="button" value="Clear"></input>
+            <input id="text" type="textarea"></input>
+        </div>
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    //data
+                    var t = document.getElementById("table");
+                    var data = [
+                        {name:'Ama',gender:'F', level:10},
+                        {name:'Bob',gender:'M', level:3},
+                        {name:'Cary',gender:'M', level:1},
+                        {name:'Dallin',gender:'F', level:6}
+                    ];
+                    
+                    // load table
+                    initTable(data, t);
+                    //select rows
+                    var selIndex = selectRows();
+                    //delete selected rows
+                    delRows();
+                    //uncheck all checkboxes
+                    var btnClr = document.getElementById("btnClr");
+                    btnClr.onclick = function(){
+                        uncheckRows(false);
+                    }
+                    //select/deselect all triggered by the head checkbox            
+                    selectAll();
+                });
+                
+                function createRadio(){
+                    return '<input class="checkbox" type="checkbox"></input>';
+                }
+                function initTable(data, table){
+                    //add header
+                    var theader = table.insertRow(-1);
+                    var names = Object.keys(data[0]);
+                    names.unshift(createRadio());
+                    //console.log(names);
+                    for (var i = 0; i < names.length; i++) {
+                        var headerCell = document.createElement('th');
+                        headerCell.innerHTML = names[i];
+                        if(i==0){
+                            headerCell.className = 'check';
+                            headerCell.id = -1;
+                        }else{
+                            headerCell.className = 'header';
+                            headerCell.id = 'headerCell'+i;
+                        }
+                        theader.appendChild(headerCell);
+                    }
+                    //console.log(table);
+                    
+                    //add rows
+                    for (var m = 0; m < data.length; m++) {
+                        var row = table.insertRow(-1);
+                        for (var n = 0; n < names.length; n++) {
+                            var headerCell = document.createElement('td');
+                            //console.log( data[m][names[n]]);
+                            if(n==0){
+                                headerCell.innerHTML =  names[n];
+                                headerCell.className = 'check';
+                                headerCell.id = m;
+                            }else{
+                                headerCell.innerHTML = data[m][names[n]];
+                                headerCell.className = 'row';
+                                headerCell.id = 'rowCell'+n;
+                            }
+                            row.appendChild(headerCell);
+                        }
+                    }
+                }//end initTable
+                
+                function selectRows(){
+                    var check = document.querySelectorAll('.check');
+                    var btn = document.getElementById("btnSel");
+                    btn.onclick = function(){
+                        //console.log(check.length);
+                        var a = new Array();
+                        for (var i = 1; i < check.length; i++) {
+                            //console.log(check[i].id);
+                            //console.log(ch.checked);
+                            var ch = check[i].getElementsByTagName('input')[0];
+                            if(ch.checked){
+                                a.push(check[i].id);
+                            }
+                        }
+                        console.log(a);
+                        return(a);
+                    }
+                }//end selectRows
+                                    
+                function uncheckRows(check_boolean){
+                    var check = document.querySelectorAll('.check');
+                    //console.log(check_boolean);
+                    for (var i = 0; i < check.length; i++) {
+                        var ch = check[i].getElementsByTagName('input')[0];
+                        ch.checked = check_boolean;
+                        //console.log(ch.checked);
+                    }
+                }// end uncheckRows
+                
+                function delRows(){
+                    var check = document.querySelectorAll('.check');
+                    var tr = document.querySelectorAll('tr');
+                    var b = document.getElementById("btnDel");
+                    b.onclick = function(){
+                        for (var i = 1; i < check.length; i++) {
+                            var ch = check[i].getElementsByTagName('input')[0];
+                            if (ch.checked == true){
+                                //console.log(tr[i]);
+                                ch.checked = false;
+                                tr[i].remove();
+                            }
+                        }
+                    }                    
+                }//end delRows
+                
+                function selectAll(){
+                    var check = document.querySelectorAll('.check');
+                    var checkHeader = document.getElementById('-1');
+                    var checkHeaderInput= checkHeader.getElementsByTagName('input')[0];
+                    checkHeaderInput.onchange = function(){
+                        if(checkHeaderInput.checked){
+                            uncheckRows(true);
+                        }else{
+                            uncheckRows(false);
+                        }
+                    }
+                }//end selectAll
+
+
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

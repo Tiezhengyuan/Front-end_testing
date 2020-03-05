@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var a= new Array(1,2,22,3,4);
+            //
+            console.log(a);
+            a.pop(); // remove the last one
+            console.log(a);
+            a.push(5); // add one to the end
+            console.log(a);
+            var i=a.shift(); // remove the first one
+            console.log(a);
+            a.unshift(9); // add one to the first
+            console.log(a);
+            
+            //
+            console.log('order array as string');
+            a.sort();
+            console.log(a);
+            console.log('order array as number');
+            var compF = function(a, b){
+                return a-b;
+            }
+            a.sort(compF);
+            console.log(a);
+            //Note: remember this method. used popular
+            //simplify the process
+            a.sort(function(a,b){return a-b;});
+            console.log(a);
+            //
+            a.reverse();
+            console.log(a);
+        </script>    
+    </body>
+</html>
+
+
+
+
+

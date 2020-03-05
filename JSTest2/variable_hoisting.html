@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            //redefine an object
+            var a=19; //global variable
+            function d(){
+                console.log(a);//undefined variable
+                var a={name:'A'};//local variable
+                console.log(a);
+            }
+            d();
+            console.log(a);
+            
+            //window is global variable in browser
+            console.log('a1'.window);
+            if(!('a1'in window)){
+                var a1=19;
+            }
+            console.log(a1);
+            
+            //inititation of object function prioritize the variable
+            console.log(b);// object
+            var b=19;
+            console.log(b);//global variable
+            function b(){
+            };
+            
+            //c1 local, c2/c3 are global variable
+            console.log('--------');
+            c();
+            console.log(c2);//9
+            console.log(c3);//9
+            //console.log(c1);//error
+            function c(){
+                var c1=c2=9//
+                c3=9;
+                console.log(c1);//9
+                console.log(c2);//9
+                console.log(c3);   //9             
+            }
+            
+            //k is local variable.
+            //feature of for loop
+            f();
+            //console.log(k);//error
+            function f(){
+                for(var k=0; k<5; k++){
+                    console.log(k);//0-4
+                }
+                console.log(k);//5
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue-dev/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myApp">
+            <p>DNA seq is {{ message}}</p>
+            <p>{{ message | toUpper}}</p>
+            <hr/>
+            <p>Task is finished by {{progress}}({{progress | toPercentage}})</p>
+            <p>The sample name of {{fileName}} is {{ fileName | toPrefix}}</p>
+            <hr/>
+        </div>
+        
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                message: "attcgca",
+                progress: 0.3,
+                fileName: "ds3r_R1_001.fastq",  
+            },
+            filters:{
+                toUpper: function(value){
+                    return value.toUpperCase();
+                },
+                toPercentage: function(value){
+                    return value*100+"%";
+                },
+                toPrefix: function(value){
+                    return value.replace(/.fastq|.fq|R1_|_R1/g,"");
+                },
+            },
+        });
+    </script>
+
+    </body>
+</html>

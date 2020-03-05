@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>query selector</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="d" id="">
+            dsaf
+        </div>
+        <p class="p" id="" name="p1">
+            ab
+        </p>
+        <p class="p" id="" name="p2">
+            dsfa
+        </p>
+        <h1 id="tmd">header </h1>
+        <div>select marks by class name, id name or marks</div>
+        // querySelector is suggested if IE>6 could be used. 
+        <script type="text/javascript">
+            console.log('load JS');
+            // return the first element
+            var d1 = document.querySelector(".d");
+            console.log(d1);
+            var t1 = document.querySelector("#tmd");
+            console.log(t1);            
+            var p1 = document.querySelector("p");
+            console.log(p1);            
+            
+            //arr is an instance of NodeList
+            // arr -> NodeList -> Object
+            var arr=document.querySelectorAll(".p");
+            console.log(arr);
+            //forEach receive a function: 
+            //arg1: instance of arr
+            //arg2: index of arr
+            arr.forEach(function(element, index){
+                    console.log(index + ":" + element.innerHTML);
+                })
+        </script>    
+    </body>
+</html>
+
+
+
+
+

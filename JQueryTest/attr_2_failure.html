@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>   
+        <style>
+            div{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="p" id="">
+
+        </p>
+        <div class="" id="">
+            <table class="" id="">
+                <tr>
+                    <td>Your name:</td>
+                    <td>
+                        <input id="text" type="text" value=""></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td id="radio-td">
+                        <input class="rbtn" id="rbtn1" type="radio">small</input>
+                        <input class="rbtn" id="rbtn2" type="radio" checked>medium</input>
+                        <input class="rbtn" id="rbtn3" type="radio">large</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>add a topping</td>
+                    <td>
+                        <input id="cbtn" type="checkbox"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select a drink:</td>
+                    <td>
+                        <select id="sel">
+                            <option id='a' selected="selected">soda</option>
+                            <option id="b">beer</option>
+                            <option id='c'>wine</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div class="" id="">
+                <input id="btn" type="button" value="OK"></input>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+           //bind events
+           //text input
+           $("#text").on('change', function(x){
+               $(this).attr('value', $(this).val());
+               //console.log($(this).attr('value'));
+           });
+           // radio button
+            $(".rbtn").on('change', function(x){
+                console.log($(this).attr('id'));
+                if($(this).is(":checked")) {
+                    $(this).attr('checked', true);
+                    $(this).siblings().removeAttr('checked');
+                }else{
+                    $(this).removeAttr('checked');
+                }
+                //console.log($(this).attr('checked'));
+           });
+            $("#cbtn").on('change', function(x){
+                if($(this).is(":checked")) {
+                    //console.log(true);
+                    $(this).attr('checked', true);
+                }else{
+                    $(this).removeAttr('checked');
+                }
+                //console.log($(this).attr('checked'));
+           });
+
+            // attrieve all values 
+            $("#btn").on('click', function(e){
+                console.log($("#text").attr('value'));
+                console.log($("#cbtn").attr('checked'));
+                console.log($("#rbtn").attr('checked'));
+                console.log($("option[selected|='selected']").text());
+            });
+        </script>    
+    </body>
+</html>

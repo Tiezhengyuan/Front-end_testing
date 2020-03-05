@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Counts the most frequent letters</div>
+        <script type="text/javascript">
+            console.log('load JS');
+            var s= 'Project groups can then be opened by pointing at them from the same menu.\
+                    The purpose of any integrated development environment (IDE) is to maximize \
+                    productivity and support seamless development from a single tool. \
+                    This reference document describes useful code assistance features, \
+                    customization options, and navigation capabilities of the NetBeans \
+                    IDE\'s Java Editor.';
+            ss=s.replace(/[^a-zA-Z]/g,'');
+            console.log(ss);
+            var c= new Object();
+            var max_info= new Array(), max_counts=0;
+            for (var i in ss){
+                var letter=ss[i];
+                if (letter in c){
+                    c[letter]++;
+                    if(c[letter]>max_counts){
+                        max_counts=c[letter];
+                        max_info=[letter];
+                    }else if(c[letter]==max_counts){
+                        max_info.push(letter)
+                    }
+
+                }else{
+                    c[letter]=1;
+                }
+                //console.log(ss[i]);
+            }
+            console.log(c);
+            console.log(max_counts+':'+max_info);
+        </script>    
+    </body>
+</html>
+
+
+
+
+
+
+

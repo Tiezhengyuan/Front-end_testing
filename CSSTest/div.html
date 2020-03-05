@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--Introduce 3 kinds of styles-->
+<!--Priority if conflicts exits: internal > embedded > CSS > default style-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--css style-->
+        <link rel="stylesheet" href="./div.css">
+        
+        <!--embedded style-->
+        <style>
+            p{
+                color: blue;
+                font-size: 60px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <!--internal style-->
+        <div style="color:red; font-size:40px; border:2px solid green">
+            TODO write content
+        </div>
+        <p style="color:green;">
+          asdfsa  
+        </p>
+        
+        <!--embedded style-->
+        <p>
+          asdfsa  
+        </p>
+
+        <!--CSS-->
+        <h1>title head1: color is red</h1>
+        <p>paragraph: background color is red</p>
+        <span>span font size is 28px </span>
+    </body>
+</html>
+
+
+
+
+

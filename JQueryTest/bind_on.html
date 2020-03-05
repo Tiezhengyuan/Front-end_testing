@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <input id="btn" type="button" value="OK"></input>
+        <div class="" id="">
+              we are
+        </div>
+        <ul class="list">
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+
+        <script type="text/javascript">
+            //on() replace bind(), one(), live(), delegate() in jquery3
+            $(function(){
+                // on() =bind()
+                $("#btn").on('click', function(e){
+                    console.log(this.value);
+                });
+                
+                //on() = live()
+                /*
+                //DOM method: create a p element
+                var p = document.createElement("p");
+                p.innerHTML = "abc";
+                $(p).on('click', function(e){
+                    console.log($(this).text());
+                });
+                document.body.appendChild(p);
+                */
+               // jquery method: create a p element
+               $p1 = $("<p>abc</p>");
+               $("body").append($p1);
+               $p1.on('click', function(e){
+                   console.log($(this).text());
+               });
+               
+               //on() = delegate()
+               $(".list").on('click', 'li', function(e){
+                   console.log($(this).text());
+               });
+            });
+        </script>    
+    </body>
+</html>

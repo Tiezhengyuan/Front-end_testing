@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+    </head>
+    <body>
+        <input id="cbox1" type="checkbox"></input>
+        <input id="cbox2" type="checkbox" checked></input>
+        <input id="btn" type="button" value="OK"></input>
+        <script type="text/javascript">
+            $(function(){
+                /*
+                //display
+                console.log($("#cbox1").attr('id'));
+                console.log($("#cbox2").attr('id'));
+                console.log($("#cbox1").attr('checked'));
+                console.log($("#cbox2").attr('checked'));
+                
+                //change check attribute
+                $("#cbox1").prop('checked', true);
+                $("#cbox2").prop('checked', false);
+                console.log($("#cbox1").attr('checked'));
+                console.log($("#cbox2").attr('checked'));
+                */
+               checkHandler($("#cbox1"));
+               checkHandler($("#cbox2"));
+               
+               //
+                $("#btn").on('click', function(e){
+                    console.log($("#cbox1").attr('checked'));
+                    console.log($("#cbox2").attr('checked'));
+                });
+                
+                //
+                function checkHandler(obj){
+                    obj.on('change', function(){
+                      //console.log($(this).is(':checked'));
+                        if($(this).is(':checked')){
+                            $(this).attr('checked', true);
+                        }else{
+                            $(this).attr('checked', false);
+                        }
+                        //console.log($(this).attr('checked'));
+                    });
+               }
+            });
+        </script>    
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Execute a JS block regularly</div>
+        <script type="text/javascript">
+            /*
+            //method 1:
+            setInterval(function (){console.log(new Date());}, 100);
+            // method 2: demo() and demo is different. the former only execute one time
+            setInterval(demo,100);
+            function demo(){
+                console.log(new Date());
+            }
+            //print one
+            setInterval(demo(document.title),100);
+            function demo(value){
+                console.log(value+new Date());
+            }
+
+           //delay 2s and execute the function one time
+           setTimeout(function (){
+               console.log(new Date());
+            }, 2000);
+            */
+           //stop clock after 5s
+           var t = setInterval(function (){
+                        console.log(new Date());
+                    }, 1000);
+           setTimeout(function (){
+               clearInterval(t);//stop unfailing clock 
+               console.log(t);
+            }, 5000);
+
+        </script>    
+    </body> 
+</html>
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #div{
+                border: 1px solid purple;
+                height: 400px;
+                width: 300px;
+                position: absolute;
+            }
+            #db{
+                position: relative;
+                border: 1px solid purple;
+                height: 50px;
+                width: 100px;
+                left: 50px;
+                top: 5px;
+                cursor: pointer;
+                background: url('gotop.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <script type="text/javascript" src="./documentReady.js"></script>    
+    </head>
+    <body>
+        <div id="div">
+            <div id="db"></div>
+            <input id="btn" type="button" value="OK"></input>
+            It makes my text bold, but              
+        </div>
+        <script type="text/javascript">
+            (function(){
+                document.myReady(function(){
+                    var d = document.getElementById("div");
+                    var t = document.getElementById("btn");
+                    var db = document.getElementById("db");
+                    
+                    db.onclick = function(){
+                        d.style.display = "none";
+                    }
+                    
+                    t.onclick = function(){
+                        d.style.display = "none";
+                    }
+                    
+                    
+                });
+            })();
+            
+        </script>    
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>    
+        <style>
+            .cls{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="btn" type="button" value="light is ON"></input>
+        <script type="text/javascript">
+            $(function(){
+                /*method 1: a little more lines
+                $("#btn").on('click', function(){
+                    if($(this).val() == 'light is OFF'){
+                        $(this).val('light is ON');
+                        $(this).css('backgroundColor', 'orange');
+                        $(document.body).css('backgroundColor', 'white');
+                    }else{
+                        $(this).val('light is OFF');
+                        $(this).css('backgroundColor', 'grey');
+                        $(document.body).css('backgroundColor', 'black');
+                    }
+                });*/
+                
+                //method2: 
+                $("#btn").on('click', function(){
+                    if($(this).val() == 'light is OFF'){
+                        $(this).val('light is ON');
+                    }else{
+                        $(this).val('light is OFF');
+                    }
+                    $(document.body).toggleClass("cls");
+                });
+            });
+        </script>    
+    </body>
+</html>

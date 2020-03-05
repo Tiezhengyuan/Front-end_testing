@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./documentReady.js"></script> 
+    </head>
+    <body>
+        <ul id='menu'>
+        </ul>
+
+        <script type="text/javascript">
+            (function(){
+                //
+                var data = [
+                    {name:'home', url:'/index.html', id:1},
+                    {name:'about', url:'/about.html', id:2},
+                    {name:'product', url:'/product.html', id:3},
+                    {name:'usecase', url:'/usecase.html', id:4},
+                    {name:'contact', url:'/contact.html', id:5}
+                ]
+                
+                //
+                document.myReady(function(){
+                   localMenu(); 
+                });
+                
+                function localMenu(){
+                    var menu = document.getElementById('menu');
+                    var all = new Array();
+                    for (var i = 0; i < data.length; i++) {
+                        var items=['<li id="menu',data[i].id, '"><a href="',
+                        data[i].url, '">', data[i].name, '</a></li>'];
+                        var str = items.join("");
+                        all.push(str);
+                        console.log(str);
+                    }
+                    menu.innerHTML = all.join("\n");
+                }
+            })();
+        </script>    
+    </body>
+</html>
+
+
+
+
+

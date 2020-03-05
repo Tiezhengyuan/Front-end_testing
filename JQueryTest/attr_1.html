@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>   
+        <style>
+            div{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="p" id="">
+
+        </p>
+        <div class="" id="">
+            <table class="" id="">
+                <tr>
+                    <td>Your name:</td>
+                    <td>
+                        <input id="text" type="text" value="123"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td>
+                        <input id="rbtn" type="radio">small</input>
+                        <input id="rbtn" type="radio" checked>medium</input>
+                        <input id="rbtn" type="radio">large</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>add a topping</td>
+                    <td>
+                        <input id="cbtn" type="checkbox"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select a drink:</td>
+                    <td>
+                        <select id="sel">
+                            <option id='a'>soda</option>
+                            <option selected="selected" id="b">beer</option>
+                            <option id='c'>wine</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div class="" id="">
+                <input id="btn" type="button" value="OK"></input>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            console.log($(".p").attr("id"));
+            console.log($(".p").attr("id", "pin"));
+            console.log($(".p").attr("id"));
+            //
+            console.log($("#text").attr('value'));           
+            console.log($("#text").attr('value', 456));
+            console.log($("#text").attr('value'));
+            //check box
+            $c = $("#cbtn");
+            console.log($c.attr('checked'));   
+            $c.attr('checked', true);
+            console.log($c.attr('checked'));   
+            //
+            $r = $("#rbtn");
+            console.log($r.attr('checked'));   
+            $r.attr('checked', false);
+            console.log($r.attr('checked'));   
+
+            //change selected attribute
+            console.log( $("#b").attr("selected") );
+            $("#a").attr("selected", "selected");
+            $("#a").siblings().removeClass("selected");
+            //select the selected option
+            console.log($("option[selected|='selected']").attr("id"));
+        </script>    
+    </body>
+</html>

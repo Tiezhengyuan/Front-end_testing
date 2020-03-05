@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .search-wrap{
+                margin: 0 auto;
+                height: 300px;
+                width: 300px;
+                padding-top: 30px;
+                position: relative;
+                border: 1px solid lightgrey;
+            }
+            ul{
+                list-style: none;
+            }
+            .search-wrap .list{
+                border: 1px solid lightgrey;
+                width: 188px;
+                padding: 6px;
+                display: none;
+                position: absolute;
+            }
+            .search-wrap .list li{
+                height: 30px;
+                line-height: 30px;
+            }
+            .search-wrap .list li:hover{
+                background-color: grey;
+                cursor: pointer;
+                padding-left: 5px;
+            }
+            .text-search {
+                border-width: 2px;
+                width: 198px;
+                line-height: 20px;
+                font-size: 20px;
+            }
+            #btn1{
+                heigth: 30px;
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="search-wrap">
+            <input id="text" class="text-search" type="text"></input>
+            <input id="btn1" type="button" value="Search"></input>
+            <ul class="list" id="tipList">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var txt = document.getElementById("text");
+            var btn = document.getElementById("btn1");
+            var ul = document.getElementById("tipList");
+            var liList = document.getElementsByTagName("li")
+            btn.onclick = function (){
+                if(txt.value == ''){
+                    return false;
+                }else{
+                    alert(txt.value);
+                }
+            }
+            text.onfocus = function(){
+                //block must be encompassed by ""
+                ul.style.display = "block";
+            }
+            text.onblur = function(){
+                ul.style.display = "none";
+            }
+
+            //order: onmousedown -> onblur -> onmouseup -> onclick
+            for (var i = 0; i < liList.length; i++) {
+                console.log(liList[i]);
+                //.onclick will not work
+                liList[i].onmousedown = listHandler;
+            }
+            function listHandler(){
+                var liText = this.innerHTML;
+                txt.value = liText;
+                console.log(txt.value);
+            }
+        </script>    
+    </body>
+</html>
+
+
+
+
+

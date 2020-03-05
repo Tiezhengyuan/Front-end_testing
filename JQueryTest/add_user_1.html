@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./jquery-3.4.1.js"></script>   
+        <style>
+            html, body, div, form, table{
+                padding:0;
+                margin:0:
+            }
+            td{
+                padding:5px;
+                margin: 5px;
+            }
+            .input-lb{
+                font-size: 18px;
+                text-align: right;
+            }
+            .text{
+                width: 150px;
+            }
+            #textAddress, #textAff{
+                width: 300px;
+            }
+            .btn{
+                height: 40px;
+                width: 100px;
+                font-size: 25px;
+                font-wieght: bold;
+                margin: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Add a new user</h2>
+        <div id="input-div">
+            <form action="#">
+                <table id="input-table">
+                    <tr>
+                        <td class="input-lb">First name: </td>
+                        <td><input class="text" id="textFirst" type="text"></input></td>
+                        <td class="input-lb">Last name: </td>
+                        <td><input class="text" id="textLast" type="text"></input></td>
+                    </tr>
+                    <tr>
+                        <td class="input-lb">Cell phone: </td>
+                        <td><input class="text" id="textCell" type="number"></input></td>
+                        <td class="input-lb">Office phone: </td>
+                        <td><input class="text" id="textOffice" type="number"></input></td>
+                    </tr>
+                    <tr>
+                        <td class="input-lb">email:</td>
+                        <td><input class="text" id="textEmail" type="email"></input></td>
+                    </tr>
+                    <tr>
+                        <td class="input-lb">Address</td>
+                        <td colspan="2"><input class="text" id="textAddress" type="text"></input></td>
+                    </tr>
+                    <tr>
+                        <td class="input-lb">City</td>
+                        <td><input class="text" id="textCity" type="text"></input></td>
+                        <td class="input-lb">zip code</td>
+                        <td><input class="text" id="textZip" type="number"></input></td>
+                    </tr>
+                    <tr>
+                        <td class="input-lb">Affiliation:</td>
+                        <td colspan="2"><input class="text" id="textAff" type="text"></input></td>
+                    </tr>
+                </table>
+                <input class="btn" id="btnSub" type="button" value="submit"></input>
+                <input class="btn" id="btnClr" type="reset" value="clear"></input>
+            </form>
+            <hr></hr>
+        </div>
+        <div id="display-div">
+            <table border="1" id="display-table">
+            </table>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                var newUser = new Object();
+                $("#btnSub").on('click', newUser, function(e){
+                    newUser.firstName = $("#textFirst").val();
+                    newUser.lastName = $("#textLast").val();
+                    newUser.cellPhone = $("#textCell").val();
+                    newUser.officePhone = $("#textOffice").val();
+                    newUser.email = $("#textEmail").val();
+                    newUser.address = $("#textAddress").val();
+                    newUser.city = $("#textCity").val();
+                    newUser.zipCode = $("#textZip").val();
+                    newUser.affiliation = $("#textAff").val();
+                    console.log(newUser);
+                });
+            });
+        </script>    
+    </body>
+</html>
